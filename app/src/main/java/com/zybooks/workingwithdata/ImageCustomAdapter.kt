@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.zybooks.workingwithdata.NasaAPI.ImageData
 import java.net.URL
 
 
-class ImageCustomAdapter(private val dataSet: ArrayList<ImageData>) :
+class ImageCustomAdapter(private val dataSet: ArrayList<NasaAPI.ImageData>) :
     RecyclerView.Adapter<ImageCustomAdapter.ViewHolder>() {
 
     /**

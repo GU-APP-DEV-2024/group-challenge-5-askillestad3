@@ -31,7 +31,7 @@ class MainMenu : AppCompatActivity() {
         }
         var earthButton = findViewById<Button>(R.id.earthButton)
         earthButton.setOnClickListener {
-            var intent = Intent(this, NasaAPI::class.java)
+            var intent = Intent(this, EarthAPI::class.java)
             startActivity(intent)
         }
     }
