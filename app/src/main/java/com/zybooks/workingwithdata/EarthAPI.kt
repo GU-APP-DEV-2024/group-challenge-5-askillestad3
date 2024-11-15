@@ -16,10 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 //const val TAG = "EARTH_API"
 
 class EarthAPI : AppCompatActivity() {
-    lateinit var startDateTextView: TextView
-    lateinit var startDateEditText: EditText
-    lateinit var endDateTextView: TextView
-    lateinit var endDateEditText: EditText
+    lateinit var longitudeTextView: TextView
+    lateinit var latitudeEditText: EditText
     lateinit var recyclerView: RecyclerView
     lateinit var imageDataSet: ArrayList<ImageData>
     lateinit var imageCustomAdapter: ImageCustomAdapter
@@ -42,34 +40,34 @@ class EarthAPI : AppCompatActivity() {
         supportActionBar?.title = "Super Cool and Interesting Earth Photos!"
 
 
-        startDateTextView = findViewById(R.id.dateTextView)
-        startDateEditText = findViewById(R.id.dateEditText)
-        startDateEditText.doAfterTextChanged {
-            countEditText.isEnabled = startDateEditText.text.isEmpty()
+        longitudeTextView = findViewById(R.id.dateTextView)
+        latitudeEditText = findViewById(R.id.dateEditText)
+        latitudeEditText.doAfterTextChanged {
+            countEditText.isEnabled = latitudeEditText.text.isEmpty()
         }
 
-        endDateTextView = findViewById(R.id.endDateTextView)
-        endDateEditText = findViewById(R.id.endDateEditText)
-        endDateEditText.doAfterTextChanged {
-            countEditText.isEnabled = endDateEditText.text.isEmpty()
+        longitudeTextView = findViewById(R.id.endDateTextView)
+        latitudeEditText = findViewById(R.id.endDateEditText)
+        latitudeEditText.doAfterTextChanged {
+            countEditText.isEnabled = latitudeEditText.text.isEmpty()
         }
 
         countEditText = findViewById(R.id.countEditText)
         countEditText.doAfterTextChanged {
-            startDateEditText.isEnabled = countEditText.text.isEmpty()
-            endDateEditText.isEnabled = countEditText.text.isEmpty()
+            latitudeEditText.isEnabled = countEditText.text.isEmpty()
+            latitudeEditText.isEnabled = countEditText.text.isEmpty()
         }
 
         val rangeCheckBox: CheckBox = findViewById(R.id.rangeCheckBox)
         rangeCheckBox.setOnClickListener {
             if (rangeCheckBox.isChecked ) {
-                endDateTextView.visibility = View.VISIBLE
-                endDateEditText.visibility = View.VISIBLE
-                startDateTextView.text = getString(R.string.start)
+                longitudeTextView.visibility = View.VISIBLE
+                latitudeEditText.visibility = View.VISIBLE
+                longitudeTextView.text = getString(R.string.start)
             } else {
-                endDateTextView.visibility = View.INVISIBLE
-                endDateEditText.visibility = View.INVISIBLE
-                startDateTextView.text = getString(R.string.date)
+                longitudeTextView.visibility = View.INVISIBLE
+                latitudeEditText.visibility = View.INVISIBLE
+                longitudeTextView.text = getString(R.string.date)
 
             }
         }
